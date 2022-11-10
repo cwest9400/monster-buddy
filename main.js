@@ -1,11 +1,45 @@
 //targets
+//update display number(1-10) based on timer 
 const hungerStat = document.querySelector('.hungerStat')
 const sleepyStat = document.querySelector('.sleepyStat')
 const boredomStat = document.querySelector('.boredomStat')
+//start the game(timer button)
+const startTimer = document.querySelector('.startButton')
+
+//timer code
+
+let intervalStat
+///might have to fix this later
+let count = Number(hungerStat.textContent)
 
 
 
 
-const timer = setInterval(()=>console.log('hello'), 1000)
-console.log('the interval reference', timer)
-setTimeout(()=>clearInterval(timer), 10000)
+
+/////timer functions
+
+function updateStat(num) {
+    hungerStat.textContent = num
+    sleepyStat.textContent = num
+    boredomStat.textContent = num
+    if(num == 10) {
+        clearInterval(intervalStat)
+      } 
+}
+////decrement function
+
+
+
+
+
+
+//eventlisteners
+startTimer.addEventListener("click", function () {
+    intervalStat = setInterval(() => {
+      count += 1;
+      updateStat(count);      
+     }, 1000);
+    startTimer.disabled = true;
+  });
+  
+  
