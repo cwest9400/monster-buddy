@@ -50,7 +50,22 @@ function updateSleepyStat(num2) {
         feedButton.disabled = true
         lightsButton.disabled = true
         playButton.disabled = true
-        hungerStat.textContent = "OH NO!! Your pet doesn't look so great!"
+        sleepyStat.textContent = "OH NO!! Your pet doesn't look so great!"
+    } 
+}
+
+///boredom function
+function updateBoredomStat(num3) {
+    boredomStat.textContent = num3
+    
+    if(num3 == 10) {
+        clearInterval(intervalHungerStat)
+        clearInterval(intervalSleepyStat)
+        clearInterval(intervalBoredomStat)
+        feedButton.disabled = true
+        lightsButton.disabled = true
+        playButton.disabled = true
+        boredomStat.textContent = "OH NO!! Your pet is bored to death!"
     } 
 }
 
@@ -80,6 +95,13 @@ function decrementSleepiness () {
         sleepyStat.textContent = countSleepiness  
 }
 }
+//decrement boredom
+function decrementBoredom () {
+    if(countBoredom > 0) {
+        countBoredom --
+        boredomStat.textContent = countBoredom 
+}
+}
 
 
     
@@ -92,8 +114,7 @@ function decrementSleepiness () {
 
 
 //eventlisteners
-//timers
-///Hunger timer
+///timer
 startTimer.addEventListener("click", function () {
     intervalHungerStat = setInterval(() => {
       countHunger += 1
@@ -102,7 +123,11 @@ startTimer.addEventListener("click", function () {
     intervalSleepyStat = setInterval(() => {
         countSleepiness += 1
         updateSleepyStat(countSleepiness)     
-    }, 3000)
+    }, 1500)
+    intervalBoredomStat = setInterval(() => {
+        countBoredom += 1
+        updateBoredomStat(countBoredom)     
+    }, 1200)
     startTimer.disabled = true
   })
 
@@ -113,3 +138,4 @@ startTimer.addEventListener("click", function () {
   //decrement listners
 feedButton.addEventListener('click', decrementHunger)
 lightsButton.addEventListener('click', decrementSleepiness)
+playButton.addEventListener('click', decrementBoredom)
