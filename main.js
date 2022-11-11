@@ -3,6 +3,8 @@
 const hungerStat = document.querySelector('.hungerStat')
 const sleepyStat = document.querySelector('.sleepyStat')
 const boredomStat = document.querySelector('.boredomStat')
+//age stat
+const ageStat = document.querySelector('.ageStat')
 ///start the game(timer button)
 const startTimer = document.querySelector('.startButton')
 ///decrement buttons
@@ -15,11 +17,13 @@ const playButton = document.querySelector(".playButton")
 let intervalHungerStat
 let intervalSleepyStat
 let intervalBoredomStat
+let intervalAgeStat
 
 //stat counts
 let countHunger = Number(hungerStat.textContent)
 let countSleepiness = Number(sleepyStat.textContent)
 let countBoredom = Number(boredomStat.textContent)
+let countAge = Number(ageStat.textContent)
 
 
 //timer functions
@@ -31,6 +35,7 @@ function updateHungerStat(num) {
         clearInterval(intervalHungerStat)
         clearInterval(intervalSleepyStat)
         clearInterval(intervalBoredomStat)
+        clearInterval(intervalAgeStat)
         feedButton.disabled = true
         lightsButton.disabled = true
         playButton.disabled = true
@@ -47,6 +52,7 @@ function updateSleepyStat(num2) {
         clearInterval(intervalHungerStat)
         clearInterval(intervalSleepyStat)
         clearInterval(intervalBoredomStat)
+        clearInterval(intervalAgeStat)
         feedButton.disabled = true
         lightsButton.disabled = true
         playButton.disabled = true
@@ -62,6 +68,7 @@ function updateBoredomStat(num3) {
         clearInterval(intervalHungerStat)
         clearInterval(intervalSleepyStat)
         clearInterval(intervalBoredomStat)
+        clearInterval(intervalAgeStat)
         feedButton.disabled = true
         lightsButton.disabled = true
         playButton.disabled = true
@@ -69,6 +76,9 @@ function updateBoredomStat(num3) {
     } 
 }
 
+function updateAgeStat(num4) {
+    ageStat.textContent = num4
+}    
 
 
 
@@ -128,6 +138,10 @@ startTimer.addEventListener("click", function () {
         countBoredom += 1
         updateBoredomStat(countBoredom)     
     }, 1200)
+    intervalAgeStat = setInterval(() => {
+        countAge += 1
+        updateAgeStat(countAge)     
+    }, 5000)
     startTimer.disabled = true
   })
 
