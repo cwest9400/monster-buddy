@@ -3,6 +3,7 @@
 const hungerStat = document.querySelector('.hungerStat')
 const sleepyStat = document.querySelector('.sleepyStat')
 const boredomStat = document.querySelector('.boredomStat')
+const deathMessage = document.querySelector('.deathMessage')
 //age stat
 const ageStat = document.querySelector('.ageStat')
 ///start the game(timer button)
@@ -55,8 +56,16 @@ function updateHungerStat(num) {
         feedButton.disabled = true
         lightsButton.disabled = true
         playButton.disabled = true
-        hungerStat.textContent = "OH NO!! pet doesn't look so great!"
+        hungerStat.textContent = "X"
+        deathMessage.textContent = `OH NO! ${userPetName} died from hunger!`
     } 
+    if (num <=3) {
+        hungerStat.style.color = "green"
+    } else if( num <= 6) {
+        hungerStat.style.color = "orange"
+    }else {
+        hungerStat.style.color = "red"
+    }
         
     
 }
@@ -72,7 +81,15 @@ function updateSleepyStat(num2) {
         feedButton.disabled = true
         lightsButton.disabled = true
         playButton.disabled = true
-        sleepyStat.textContent = "UH OH! pet fell asleep...FOREVER"
+        sleepyStat.textContent = "X"
+        deathMessage.textContent = `${userPetName} fell asleep...FOREVER!`
+    }
+    if (num2 <=3) {
+        sleepyStat.style.color = "green"
+    } else if( num2 <= 6) {
+        sleepyStat.style.color = "orange"
+    }else {
+        sleepyStat.style.color = "red"
     } 
 }
 
@@ -88,8 +105,16 @@ function updateBoredomStat(num3) {
         feedButton.disabled = true
         lightsButton.disabled = true
         playButton.disabled = true
-        boredomStat.textContent = "pet is bored to death!"
+        boredomStat.textContent = "X"
+        deathMessage.textContent = `${userPetName} is bored to death!`
     } 
+    if (num3 <=3) {
+        boredomStat.style.color = "green"
+    } else if( num3 <= 6) {
+        boredomStat.style.color = "orange"
+    }else {
+        boredomStat.style.color = "red"
+    }
 }
 
 function updateAgeStat(num4) {

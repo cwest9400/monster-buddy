@@ -10,23 +10,32 @@
 </head>
 <body>
     <div class = "playArea">
+        
         <div class = "statusArea">
             <p>Hunger: <span class = "hungerStat"></span></p>
-            <p>Sleepiness: <span class = "sleepyStat"></span></p>
-            <p>Boredom: <span class = "boredomStat"></span></p>
+            <p>Sleepiness:   <span class = "sleepyStat"></span></p>
+            <p>Boredom:   <span class = "boredomStat"></span></p>
         </div>
+        
+        
         <div class = "nameArea">
             <h1 class = "nameDisplay"></h1>
             <form id ="form">
                 <input type="text" id = "userInput" placeholder = "Name your pet!">
                 <button type="submit" id ="submitButton">Submit</button>
             </form>
-            <button class = 'startButton'>Start!</button>
+            <div class = startButtonBox>
+                <button class = 'startButton' >Start!</button>
+            </div>
         
-        
-        <!-- <div class = "petImageBox"> -->
-            <img src= "https://i.gifer.com/PcHK.gif" alt="little green monster with a big mouth" >
+            
+            
+            <div class = imgArea>
+                <img class = img src= "https://i.gifer.com/PcHK.gif" alt="little green monster with a big mouth" >
+            </div>  
             <h2>Age: <span class= "ageStat"></span></h2>
+            <div class = "deathMessage">
+            </div>
         </div>
         <div class = "userButtons">
             <button class = "feedButton">Feed!</button>
