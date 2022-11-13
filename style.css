@@ -1,0 +1,51 @@
+.playArea {
+    background-color: #9A8A96;
+    width: 600px;
+    border-radius: 10px;
+    filter: drop-shadow(0 1mm 2mm rgb(0, 0, 0));
+    display: grid;
+    grid-template-columns: 100px auto 100px 1fr;
+
+    
+}
+
+.statusArea {
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+
+}
+
+
+
+.nameArea {
+   display: flex;
+   flex-direction: column;
+   justify-items: center;
+   
+   text-align: center;
+   
+
+   
+
+
+}
+.startButton {
+    width: 100px;
+    
+}
+
+#form {
+    text-align: center;
+
+
+}
+
+
+.userButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
