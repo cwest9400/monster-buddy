@@ -17,14 +17,24 @@ const form = document.querySelector("#form")
 const userInput = document.querySelector("#userInput")
 const nameDisplay = document.querySelector(".nameDisplay")
 
+startTimer.disabled = true
+feedButton.disabled = true
+lightsButton.disabled = true
+playButton.disabled = true
+
 //nameyourpet
+
 let userPetName
 
 form.addEventListener('submit', function(e){
     e.preventDefault()
     userPetName = userInput.value
     nameDisplay.innerHTML = userPetName
-    form.remove()     
+    form.remove()
+    startTimer.disabled = false
+    feedButton.disabled = false
+    lightsButton.disabled = false
+    playButton.disabled = false    
     })
 
 
@@ -60,9 +70,9 @@ function updateHungerStat(num) {
         deathMessage.textContent = `OH NO! ${userPetName} died from hunger!`
     } 
     if (num <=3) {
-        hungerStat.style.color = "greenyellow"
+        hungerStat.style.color = "rgb(10, 190, 64)"
     } else if( num <= 6) {
-        hungerStat.style.color = "goldenrod"
+        hungerStat.style.color = "darkorange"
     }else {
         hungerStat.style.color = "red"
     }
@@ -85,9 +95,9 @@ function updateSleepyStat(num2) {
         deathMessage.textContent = `${userPetName} fell asleep...FOREVER!`
     }
     if (num2 <=3) {
-        sleepyStat.style.color = "greenyellow"
+        sleepyStat.style.color = "rgb(10, 190, 64)"
     } else if( num2 <= 6) {
-        sleepyStat.style.color = "goldenrod"
+        sleepyStat.style.color = "darkorange"
     }else {
         sleepyStat.style.color = "red"
     } 
@@ -109,9 +119,9 @@ function updateBoredomStat(num3) {
         deathMessage.textContent = `${userPetName} is bored to death!`
     } 
     if (num3 <=3) {
-        boredomStat.style.color = "greenyellow"
+        boredomStat.style.color = "rgb(10, 190, 64)"
     } else if( num3 <= 6) {
-        boredomStat.style.color = "goldenrod"
+        boredomStat.style.color = "darkorange"
     }else {
         boredomStat.style.color = "red"
     }
@@ -170,15 +180,15 @@ startTimer.addEventListener("click", function () {
     intervalHungerStat = setInterval(() => {
       countHunger += 1
       updateHungerStat(countHunger)     
-    }, 1000)
+    }, 700)
     intervalSleepyStat = setInterval(() => {
         countSleepiness += 1
         updateSleepyStat(countSleepiness)     
-    }, 1500)
+    }, 900)
     intervalBoredomStat = setInterval(() => {
         countBoredom += 1
         updateBoredomStat(countBoredom)     
-    }, 1200)
+    }, 1000)
     intervalAgeStat = setInterval(() => {
         countAge += 1
         updateAgeStat(countAge)     
