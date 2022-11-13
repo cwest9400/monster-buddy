@@ -11,6 +11,22 @@ const startTimer = document.querySelector('.startButton')
 const feedButton = document.querySelector(".feedButton")
 const lightsButton = document.querySelector(".lightsButton")
 const playButton = document.querySelector(".playButton")
+//pet name selectors
+const form = document.querySelector("#form")
+const userInput = document.querySelector("#userInput")
+const nameDisplay = document.querySelector(".nameDisplay")
+
+//nameyourpet
+let userPetName
+
+form.addEventListener('submit', function(e){
+    e.preventDefault()
+    userPetName = userInput.value
+    nameDisplay.innerHTML = userPetName
+    form.remove()     
+    })
+
+
 
 
 //timer intervals
@@ -39,7 +55,7 @@ function updateHungerStat(num) {
         feedButton.disabled = true
         lightsButton.disabled = true
         playButton.disabled = true
-        hungerStat.textContent = "OH NO!! Your pet doesn't look so great!"
+        hungerStat.textContent = "OH NO!! pet doesn't look so great!"
     } 
         
     
@@ -56,7 +72,7 @@ function updateSleepyStat(num2) {
         feedButton.disabled = true
         lightsButton.disabled = true
         playButton.disabled = true
-        sleepyStat.textContent = "OH NO!! Your pet doesn't look so great!"
+        sleepyStat.textContent = "UH OH! pet fell asleep...FOREVER"
     } 
 }
 
@@ -72,7 +88,7 @@ function updateBoredomStat(num3) {
         feedButton.disabled = true
         lightsButton.disabled = true
         playButton.disabled = true
-        boredomStat.textContent = "OH NO!! Your pet is bored to death!"
+        boredomStat.textContent = "pet is bored to death!"
     } 
 }
 
