@@ -60,9 +60,9 @@ function updateHungerStat(num) {
         deathMessage.textContent = `OH NO! ${userPetName} died from hunger!`
     } 
     if (num <=3) {
-        hungerStat.style.color = "green"
+        hungerStat.style.color = "greenyellow"
     } else if( num <= 6) {
-        hungerStat.style.color = "orange"
+        hungerStat.style.color = "goldenrod"
     }else {
         hungerStat.style.color = "red"
     }
@@ -85,9 +85,9 @@ function updateSleepyStat(num2) {
         deathMessage.textContent = `${userPetName} fell asleep...FOREVER!`
     }
     if (num2 <=3) {
-        sleepyStat.style.color = "green"
+        sleepyStat.style.color = "greenyellow"
     } else if( num2 <= 6) {
-        sleepyStat.style.color = "orange"
+        sleepyStat.style.color = "goldenrod"
     }else {
         sleepyStat.style.color = "red"
     } 
@@ -109,9 +109,9 @@ function updateBoredomStat(num3) {
         deathMessage.textContent = `${userPetName} is bored to death!`
     } 
     if (num3 <=3) {
-        boredomStat.style.color = "green"
+        boredomStat.style.color = "greenyellow"
     } else if( num3 <= 6) {
-        boredomStat.style.color = "orange"
+        boredomStat.style.color = "goldenrod"
     }else {
         boredomStat.style.color = "red"
     }

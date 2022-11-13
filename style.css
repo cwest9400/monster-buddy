@@ -2,6 +2,7 @@
     background-color: lightgray; 
     /* #9A8A96 */
     width: 600px;
+    height: 450px;
     border-radius: 10px;
     filter: drop-shadow(0 1mm 2mm rgb(0, 0, 0));
     display: grid;
@@ -76,6 +77,8 @@
     border-radius: 40px;
     border-style: solid;
     border-color: #62415a;
+    width: 360px;
+    height: 360px;
     
 }
 
@@ -107,6 +110,7 @@ h2 {
 }
 
 .deathMessage {
+    height: 25px;
     margin-top: -70px;
     font-weight: bolder;
 }
